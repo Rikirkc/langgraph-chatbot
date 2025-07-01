@@ -9,7 +9,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 class State(TypedDict):
     messages: Annotated[list, add_messages]
@@ -17,8 +17,8 @@ class State(TypedDict):
 
 def create_chatbot_graph():
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
-        api_key=api_key,
+        model="gemini-2.0-flash",
+        api_key=API_KEY,
         temperature=0.2,
     )
 
